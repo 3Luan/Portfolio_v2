@@ -1,10 +1,10 @@
 ---
-const personalImageAlt = "Miguel Ángel";
-import MailIcon from "@/components/icons/Mail.astro";
-import SocialPill from "@/components/SocialPill.astro";
-import GitHubIcon from "@/components/icons/GitHub.astro";
-import PhoneIcon from "@/components/icons/Phone.astro";
-import GraduationIcon from "@/components/icons/Graduation.astro";
+const personalImageAlt = "Miguel Ángel"
+import MailIcon from "@/components/icons/Mail.astro"
+import SocialPill from "@/components/SocialPill.astro"
+import GitHubIcon from "@/components/icons/GitHub.astro"
+import PhoneIcon from "@/components/icons/Phone.astro"
+import GraduationIcon from "@/components/icons/Graduation.astro"
 ---
 
 <div class="max-w-xl">
@@ -20,9 +20,11 @@ import GraduationIcon from "@/components/icons/Graduation.astro";
 
     <div class="flex flex-col">
       <h1
-        class="font-bold tracking-tight
+        class="
+          font-bold tracking-tight
           text-gray-900 dark:text-white
-          text-[clamp(1.75rem,4vw,2.25rem)]"
+          text-[clamp(1.75rem,4vw,2.25rem)]
+        "
       >
         NGUYỄN THÀNH LUÂN
       </h1>
@@ -34,13 +36,16 @@ import GraduationIcon from "@/components/icons/Graduation.astro";
   </div>
 
   <!-- Intro -->
-  <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+  <p
+    class="text-lg leading-relaxed text-gray-700 dark:text-gray-300"
+  >
     I am a Software Developer passionate about becoming a
     <strong class="font-semibold text-yellow-500 dark:text-yellow-200">
       Full-Stack Developer
-    </strong>. With experience in both backend and frontend development, I aim
-    to build high-quality, scalable solutions while continuously learning and
-    improving problem-solving skills.
+    </strong>.
+    With experience in both backend and frontend development, I aim to build
+    high-quality, scalable solutions while continuously learning and improving
+    problem-solving skills.
   </p>
 
   <!-- Education -->
@@ -53,39 +58,36 @@ import GraduationIcon from "@/components/icons/Graduation.astro";
     </div>
 
     <p class="font-medium text-gray-800 dark:text-gray-200">
-      University of Transport and Communications - UTC2
+      University of Transport and Communications - UTC2</span>
+    </p>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      <span class="font-medium text-gray-800 dark:text-gray-200">Major Information Technology</span> - Graduated 2025
+    </p>
+
+    <p class="text-sm text-gray-600 dark:text-gray-400">
+      <span class="font-medium text-gray-800 dark:text-gray-200">GPA: </span><strong class="font-semibold text-yellow-500 dark:text-yellow-200">
+      3.28 / 4.0
+    </strong>
     </p>
   </div>
 
-  <p class="text-sm text-gray-600 dark:text-gray-400">
-    <span class="font-medium text-gray-800 dark:text-gray-200"
-      >Major Information Technology</span
-    > - Graduated 2025
-  </p>
 
-  <p class="text-sm text-gray-600 dark:text-gray-400">
-    <span class="font-medium text-gray-800 dark:text-gray-200"
-      >GPA:
-    </span><strong class="font-semibold text-yellow-500 dark:text-yellow-200">
-      3.28 / 4.0
-    </strong>
-  </p>
+  <!-- Social -->
+  <nav class="flex flex-wrap gap-4 mt-8">
+    <SocialPill as="button" copy="+84961819210">
+      <PhoneIcon class="size-4" />
+      0961819210
+    </SocialPill>
+
+    <SocialPill href="https://github.com/3luan">
+      <GitHubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+
+    <SocialPill as="button" copy="thanhluantsbd@gmail.com">
+      <MailIcon class="size-4" />
+      thanhluantsbd@gmail.com
+    </SocialPill>
+  </nav>
 </div>
-
-<!-- Social -->
-<nav class="flex flex-wrap gap-4 mt-8">
-  <SocialPill as="button" copy="+84961819210">
-    <PhoneIcon class="size-4" />
-    0961819210
-  </SocialPill>
-
-  <SocialPill href="https://github.com/3luan">
-    <GitHubIcon class="size-4" />
-    GitHub
-  </SocialPill>
-
-  <SocialPill as="button" copy="thanhluantsbd@gmail.com">
-    <MailIcon class="size-4" />
-    thanhluantsbd@gmail.com
-  </SocialPill>
-</nav>
