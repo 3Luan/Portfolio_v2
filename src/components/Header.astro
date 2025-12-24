@@ -1,7 +1,13 @@
 ---
 import ThemeToggle from "./ThemeToggle.astro"
 
-const navItems = [
+type NavItem = {
+  title: string
+  label: string
+  url: string
+}
+
+const navItems: NavItem[] = [
   // {
   //   title: "Experiencia",
   //   label: "experiencia",
