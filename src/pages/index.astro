@@ -1,18 +1,16 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import Activitiy from "@/components/icons/Activitiy.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import Projects from "@/components/Projects.astro"
-import TechnicalSkills from "@/components/TechnicalSkills.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import TitleSection from "@/components/TitleSection.astro"
-import Activities from "@/components/Activities.astro"
-import AcademicProjects from "@/components/icons/AcademicProjects.astro"
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/components/Hero.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import TitleSection from "@/components/TitleSection.astro";
+import Activities from "@/components/Activities.astro";
+import Experience from "@/components/Experience.astro";
+import TechnicalSkills from "@/components/TechnicalSkills.astro";
+import Projects from "@/components/Projects.astro";
+import Activitiy from "@/components/icons/Activitiy.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
+import CodeIcon from "@/components/icons/Code.astro";
+import AcademicProjects from "@/components/icons/AcademicProjects.astro";
 ---
 
 <Layout
@@ -21,51 +19,41 @@ import AcademicProjects from "@/components/icons/AcademicProjects.astro"
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
+
     <div class="space-y-24">
+      <SectionContainer id="activities">
+        <TitleSection>
+          <Activitiy class="size-8" />
+          Activities
+        </TitleSection>
+        <Activities />
+      </SectionContainer>
 
-    <SectionContainer id="activities">
-      <TitleSection>
-        <Activitiy class="size-8" />
-        Activities
-      </TitleSection>
-      <Activities />
-    </SectionContainer>
+      <SectionContainer id="experience">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          Experience
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
 
-    <SectionContainer id="experience">
-      <TitleSection>
-        <Briefcase class="size-8" />
-        Experience
-      </TitleSection>
-      <Experience />
-    </SectionContainer>
+      <SectionContainer id="technical-skills">
+        <TitleSection>
+          <CodeIcon class="size-7" />
+          Technical Skills
+        </TitleSection>
+        <TechnicalSkills />
+      </SectionContainer>
 
-    <SectionContainer id="technical-skills">
-      <TitleSection>
-        <CodeIcon class="size-7" />
-        Technical Skills
-      </TitleSection>
-      <TechnicalSkills />
-    </SectionContainer>
-    
-    <SectionContainer id="academic-projects">
-      <TitleSection>
-        <AcademicProjects class="size-7" />
-        Academic Projects
-      </TitleSection>
-      <Projects />
-    </SectionContainer>
-
-    <!-- <SectionContainer id="about-me">
-      <TitleSection>
-        <ProfileCheck class="size-8" />
-        About Me
-      </TitleSection>
-      <AboutMe />
-    </SectionContainer> -->
-  </div>
+      <SectionContainer id="academic-projects">
+        <TitleSection>
+          <AcademicProjects class="size-7" />
+          Academic Projects
+        </TitleSection>
+        <Projects />
+      </SectionContainer>
+    </div>
   </main>
 </Layout>

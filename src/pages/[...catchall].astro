@@ -1,0 +1,11 @@
+---
+export const prerender = false; // tắt static prerender
+
+// Lấy đường dẫn hiện tại
+const path = new URL(Astro.request.url).pathname;
+
+// Nếu đường dẫn không phải '/', trả về redirect
+if (path !== '/') {
+  return Astro.redirect('/', 307);
+}
+---
