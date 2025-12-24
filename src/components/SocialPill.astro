@@ -1,0 +1,60 @@
+---
+const {
+  as = "a",
+  href,
+  copy,
+  ...rest
+} = Astro.props
+
+const Tag = as
+---
+
+<Tag
+  {...rest}
+  href={as === "a" ? href : undefined}
+  type={as === "button" ? "button" : undefined}
+  target={as === "a" ? "_blank" : undefined}
+  rel={as === "a" ? "noopener noreferrer" : undefined}
+  data-copy={copy}
+  class="relative inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+>
+  <slot />
+
+  <span
+    class="
+      copied
+      pointer-events-none
+      absolute
+      inset-0
+      flex
+      items-center
+      justify-center
+      text-xs
+      font-medium
+      bg-gray-100/90
+      dark:bg-gray-800/90
+      opacity-0
+      transition-opacity
+      rounded-full
+    "
+  >
+    Copied
+  </span>
+</Tag>
+
+<script is:inline>
+  document.querySelectorAll("[data-copy]").forEach((el) => {
+    el.addEventListener("click", async () => {
+      const value = el.getAttribute("data-copy")
+      if (!value) return
+
+      await navigator.clipboard.writeText(value)
+
+      const label = el.querySelector(".copied")
+      if (!label) return
+
+      label.classList.add("opacity-100")
+      setTimeout(() => label.classList.remove("opacity-100"), 1200)
+    })
+  })
+</script>

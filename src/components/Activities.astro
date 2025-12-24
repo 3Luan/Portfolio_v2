@@ -1,0 +1,23 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const ACTIVITIES = [
+  {
+    date: "May 2025",
+    title: "Third Prize in Student Scientific Research",
+    company: "University of Transport and Communications - UTC2",
+    description:
+      "Awarded Third Prize in the Student Scientific Research competition at the University of Transport and Communications, Ho Chi Minh City campus, for research contributions and academic excellence.",
+  },
+]
+---
+
+<ol class="relative">
+  {
+    ACTIVITIES.map((activity) => (
+      <li>
+        <ExperienceItem {...activity} />
+      </li>
+    ))
+  }
+</ol>

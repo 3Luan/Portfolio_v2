@@ -1,0 +1,91 @@
+---
+const personalImageAlt = "Miguel Ángel";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import GitHubIcon from "@/components/icons/GitHub.astro";
+import PhoneIcon from "@/components/icons/Phone.astro";
+import GraduationIcon from "@/components/icons/Graduation.astro";
+---
+
+<div class="max-w-xl">
+  <!-- Header -->
+  <div class="flex items-center gap-5 mb-6">
+    <img
+      class="rounded-full size-24 shrink-0 object-cover
+             ring-2 ring-gray-200 dark:ring-gray-700
+             shadow-md"
+      src="/me.png"
+      alt={personalImageAlt}
+    />
+
+    <div class="flex flex-col">
+      <h1
+        class="font-bold tracking-tight
+          text-gray-900 dark:text-white
+          text-[clamp(1.75rem,4vw,2.25rem)]"
+      >
+        NGUYỄN THÀNH LUÂN
+      </h1>
+
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        Software Developer · Full-Stack Aspirant
+      </span>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+    I am a Software Developer passionate about becoming a
+    <strong class="font-semibold text-yellow-500 dark:text-yellow-200">
+      Full-Stack Developer
+    </strong>. With experience in both backend and frontend development, I aim
+    to build high-quality, scalable solutions while continuously learning and
+    improving problem-solving skills.
+  </p>
+
+  <!-- Education -->
+  <div class="ml-3 mt-7 border-l-2 border-yellow-400 pl-6">
+    <div class="flex items-center gap-3 mb-1">
+      <GraduationIcon class="size-5 text-yellow-500" />
+      <h2 class="text-base font-semibold text-gray-900 dark:text-white">
+        Education
+      </h2>
+    </div>
+
+    <p class="font-medium text-gray-800 dark:text-gray-200">
+      University of Transport and Communications - UTC2
+    </p>
+  </div>
+
+  <p class="text-sm text-gray-600 dark:text-gray-400">
+    <span class="font-medium text-gray-800 dark:text-gray-200"
+      >Major Information Technology</span
+    > - Graduated 2025
+  </p>
+
+  <p class="text-sm text-gray-600 dark:text-gray-400">
+    <span class="font-medium text-gray-800 dark:text-gray-200"
+      >GPA:
+    </span><strong class="font-semibold text-yellow-500 dark:text-yellow-200">
+      3.28 / 4.0
+    </strong>
+  </p>
+</div>
+
+<!-- Social -->
+<nav class="flex flex-wrap gap-4 mt-8">
+  <SocialPill as="button" copy="+84961819210">
+    <PhoneIcon class="size-4" />
+    0961819210
+  </SocialPill>
+
+  <SocialPill href="https://github.com/3luan">
+    <GitHubIcon class="size-4" />
+    GitHub
+  </SocialPill>
+
+  <SocialPill as="button" copy="thanhluantsbd@gmail.com">
+    <MailIcon class="size-4" />
+    thanhluantsbd@gmail.com
+  </SocialPill>
+</nav>

@@ -1,0 +1,116 @@
+---
+/* ===== Languages ===== */
+import TypeScript from "./icons/TypeScript.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import PHP from "./icons/PHP.astro"
+import Cpp from "./icons/Cpp.astro"
+
+/* ===== Frameworks & Runtimes ===== */
+import NextJS from "./icons/NextJS.astro"
+import ReactJS from "./icons/ReactJS.astro"
+import VueJS from "./icons/VueJS.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import Laravel from "./icons/Laravel.astro"
+import CakePHP from "./icons/CakePHP.astro"
+import EcCube from "./icons/EcCube.astro"
+
+/* ===== Databases ===== */
+import MySQL from "./icons/MySQL.astro"
+import SqlServer from "./icons/SqlServer.astro"
+import MongoDB from "./icons/MongoDB.astro"
+
+/* ===== Tools ===== */
+import Git from "./icons/Git.astro"
+import GitHub from "./icons/GitHub.astro"
+import GitLab from "./icons/GitLab.astro"
+import Postman from "./icons/Postman.astro"
+import RestAPI from "./icons/RestAPI.astro"
+import AwsSes from "./icons/AwsSes.astro"
+
+/* ===== Section Icons ===== */
+import Code from "./icons/AwsSes.astro"
+import Server from "./icons/AwsSes.astro"
+import Tool from "./icons/AwsSes.astro"
+
+const SKILLS = [
+  {
+    title: "Languages",
+    icon: Code,
+    items: [
+      { name: "TypeScript", icon: TypeScript },
+      { name: "JavaScript", icon: JavaScript },
+      { name: "PHP", icon: PHP },
+      { name: "C / C++", icon: Cpp },
+    ],
+  },
+  {
+    title: "Frameworks & Runtimes",
+    icon: Server,
+    items: [
+      { name: "Next.js", icon: NextJS },
+      { name: "React", icon: ReactJS },
+      { name: "Vue.js", icon: VueJS },
+      { name: "Node.js", icon: NodeJS },
+      { name: "Laravel", icon: Laravel },
+      { name: "CakePHP", icon: CakePHP },
+      { name: "EC-CUBE", icon: EcCube },
+    ],
+  },
+  {
+    title: "Databases",
+    icon: Server,
+    items: [
+      { name: "MySQL", icon: MySQL },
+      { name: "SQL Server", icon: SqlServer },
+      { name: "MongoDB", icon: MongoDB },
+    ],
+  },
+  {
+    title: "Tools & Services",
+    icon: Tool,
+    items: [
+      { name: "RESTful API", icon: RestAPI },
+      { name: "Git", icon: Git },
+      { name: "GitHub", icon: GitHub },
+      { name: "GitLab", icon: GitLab },
+      { name: "Postman", icon: Postman },
+      { name: "AWS SES", icon: AwsSes },
+    ],
+  },
+]
+---
+<section class="flex flex-col gap-16">
+  {
+    SKILLS.map(({ title, icon: Icon, items }) => (
+      <div class="flex flex-col gap-5">
+        <!-- Section Title -->
+        <div class="flex items-center gap-3">
+          <Icon class="size-6 text-gray-800 dark:text-gray-200" />
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h3>
+        </div>
+
+        <!-- Skill Badges -->
+        <ul class="flex flex-wrap gap-3">
+          {
+            items.map(({ name, icon: SkillIcon }) => (
+              <li>
+                <span
+                  class="inline-flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600
+                         bg-gray-100 dark:bg-gray-800
+                         px-4 py-1.5 text-sm font-medium
+                         text-gray-800 dark:text-gray-100
+                         transition hover:scale-105"
+                >
+                  <SkillIcon class="size-4" />
+                  {name}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    ))
+  }
+</section>

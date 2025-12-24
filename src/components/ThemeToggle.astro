@@ -1,0 +1,57 @@
+---
+import SunIcon from "./icons/Sun.astro"
+import MoonIcon from "./icons/Moon.astro"
+---
+
+<button
+  id="theme-toggle-btn"
+  class="appearance-none border-none flex hover:scale-125 transition relative p-3"
+>
+  <span class="sr-only">Toggle theme</span>
+
+  <SunIcon id="light" class="theme-toggle-icon size-5 transition-all" />
+  <MoonIcon
+    id="dark"
+    class="theme-toggle-icon absolute size-5 transition-all"
+  />
+</button>
+
+<script is:inline>
+  const getTheme = () => {
+    if (typeof localStorage !== "undefined") {
+      return localStorage.getItem("theme") ?? "light"
+    }
+    return "light"
+  }
+
+  const setTheme = (theme) => {
+    localStorage.setItem("theme", theme)
+    document.documentElement.classList.toggle("dark", theme === "dark")
+    updateIcon(theme)
+  }
+
+  const updateIcon = (theme) => {
+    document.querySelectorAll(".theme-toggle-icon").forEach((icon) => {
+      icon.style.scale = icon.id === theme ? "1" : "0"
+    })
+  }
+
+  const toggleTheme = () => {
+    const current = getTheme()
+    const next = current === "dark" ? "light" : "dark"
+    setTheme(next)
+  }
+
+  // init
+  const initialTheme = getTheme()
+  setTheme(initialTheme)
+
+  document
+    .getElementById("theme-toggle-btn")
+    .addEventListener("click", toggleTheme)
+
+  // khi chuyển page trong Astro
+  document.addEventListener("astro:after-swap", () => {
+    setTheme(getTheme())
+  })
+</script>
