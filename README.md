@@ -1,1 +1,1 @@
-thanhluan.tech
+thanhluan.site
