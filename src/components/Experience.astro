@@ -3,26 +3,45 @@ import ExperienceItem from "./ExperienceItem.astro"
 
 const EXPERIENCE = [
   {
-    date: "February 2025 – December 2025",
+    date: "February 2025 – February 2026",
     title: "Fullstack Developer",
     company: "MIDOTA",
-    description: `
-Worked as a Fullstack Developer using TypeScript, PHP, Laravel, CakePHP, EC-CUBE, Vue.js, and React.js.
-
-• Developed and maintained backend services with PHP Laravel and frontend applications with Vue.js and TypeScript.
-• Designed and implemented RESTful APIs, integrating them seamlessly with existing systems.
-• Migrated and upgraded legacy applications from CakePHP v2 to v3, and later to v5, ensuring compatibility and performance improvements.
-• Performed code reviews, provided technical guidance, and ensured high code quality and consistency.
-• Collaborated closely with cross-functional teams to meet both technical and business requirements.
-    `,
-  },
+    projects: [
+      {
+        name: "AI Menu Admin",
+        stack: "PHP, Laravel, TypeScript, VueJS, MySQL, Docker",
+        points: [
+          "Built and maintained a scalable admin platform with authentication, RBAC, and RESTful APIs.",
+          "Developed Python-based OCR and AI processing modules integrated with the Laravel backend.",
+          "Optimized frontend performance by minimizing unnecessary re-renders and improving production build efficiency to enhance overall application performance.",
+          "Designed and maintained Docker-based development and production environments."
+        ]
+      },
+      {
+        name: "Timesheets System",
+        stack: "PHP, Laravel, TypeScript, VueJS, MySQL, Docker",
+        points: [
+          "Built a comprehensive timesheet and attendance management system with multi-role workflows.",
+          "Implemented geolocation-based check-in/out, attendance requests, and reporting, export features.",
+          "Improved system performance, refactored shared components, and enhanced scalability, maintainability, and code quality.",
+          "Designed and managed Docker-based development and production environments."
+        ]
+      },
+      {
+        name: "Gakken Curico",
+        stack: "CakePHP, MySQL, Docker, AWS (SES)",
+        points: [
+          "Migrated and upgraded legacy applications from CakePHP v2 to v3 and later to v5, ensuring backward compatibility, preserving existing functionality and UI consistency.",
+          "Implemented email sending service using Amazon SES."
+        ]
+      }
+    ]
+  }
 ]
 ---
 
-<ol class="relative mt-16">
-  {
-    EXPERIENCE.map((experience) => (
-      <ExperienceItem {...experience} />
-    ))
-  }
+<ol class="relative mt-5">
+  {EXPERIENCE.map((experience) => (
+    <ExperienceItem {...experience} />
+  ))}
 </ol>
